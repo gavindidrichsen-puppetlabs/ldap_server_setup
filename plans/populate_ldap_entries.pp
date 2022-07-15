@@ -9,8 +9,8 @@ plan ldap_server_setup::populate_ldap_entries(
     }
 
     file { '/etc/ldapserver/ou.ldif':
-      ensure   => file,
-      source   => 'puppet:///modules/ldap_server_setup/ou.ldif',
+      ensure => file,
+      source => 'puppet:///modules/ldap_server_setup/ou.ldif',
     }
 
     file { '/etc/ldapserver/user.ldif':

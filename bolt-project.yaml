@@ -1,0 +1,15 @@
+---
+name: ldap_server_setup
+modules:
+- name: puppetlabs/docker
+  version_requirement: 3.2.0
+- name: puppetlabs/stdlib
+  version_requirement: 4.25.1
+- name: puppetlabs/reboot
+  version_requirement: 2.0.0
+- name: puppetlabs/powershell
+  version_requirement: 2.2.0
+- name: puppetlabs/apt
+  version_requirement: 6.2.1
+- name: puppetlabs/translate
+  version_requirement: 1.1.0
