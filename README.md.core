@@ -1,0 +1,64 @@
+# ldap_server_setup
+
+What does this do in summary?
+
+## Table of Contents
+
+1. [Description](#description)
+1. [Setup - The basics of getting started with ldap_server_setup](#setup)
+1. [Usage - Configuration options and additional functionality](#usage)
+1. [Limitations - OS compatibility, etc.](#limitations)
+1. [Development - Guide for contributing to the module](#development)
+1. [Testing](#testing)
+1. [License](#license)
+1. [Code of Conduct](#code-of-conduct)
+
+## Description
+
+* Why would I want to use this?
+* What kind of problems can it solve for users?
+
+## Setup
+
+### What ldap_server_setup affects **OPTIONAL**
+
+* What will this module alter, impact, or execute?
+* Anything else you need to mention or warn about?
+
+### Setup Requirements **OPTIONAL**
+
+* What does this module depend on?  
+* Do you need to install anything before this will work?
+* Does the most recent release break any compatibility or require any particular steps
+for upgrading?
+
+### Beginning with ldap_server_setup
+
+* What's an example of the most basic use?
+
+## Usage
+
+* What are some other common use cases and examples?
+* How is this module used to solve common problems? 
+
+## Limitations
+
+* Does this module have any incompatibilities, known issues, or other
+warnings?
+
+## Development
+
+* What are the ground rules for contributing to this project
+* How should work be submitted?
+
+## Testing
+
+## License
+
+This module is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the  ldap_server_setup project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ldap_server_setup/ldap_server_setup/master/CODE_OF_CONDUCT.md).
+
+## Release Notes/Contributors/Etc. **Optional**
