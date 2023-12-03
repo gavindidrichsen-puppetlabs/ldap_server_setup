@@ -4,9 +4,9 @@
 # The following directive installs modules to the managed moduledir.
 moduledir '.modules'
 
-mod 'puppetlabs/translate', '1.1.0'
-mod 'puppetlabs/apt', '6.2.1'
-mod 'puppetlabs/powershell', '2.2.0'
-mod 'puppetlabs/reboot', '2.0.0'
-mod 'puppetlabs/stdlib', '4.25.1'
-mod 'puppetlabs/docker', '3.2.0'
+mod 'puppetlabs/apt', '9.1.0'
+mod 'puppetlabs/docker', '9.1.0'
+mod 'puppetlabs/powershell', '6.0.0'
+mod 'puppetlabs/pwshlib', '1.0.0'
+mod 'puppetlabs/reboot', '5.0.0'
+mod 'puppetlabs/stdlib', '9.3.0'
