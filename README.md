@@ -1,49 +1,46 @@
 # ldap_server_setup
 
-## Usage
+## Description
 
 This is a rough draft of a bolt plan that installs and sets up an LDAP server in a docker container.
 
 Yes, I know it is a terrible idea to ship certificates along with the package.  I will replace this with openssl commands soon.
 
-Usage:
+## Usage
 
 ```bash
-/opt/puppetlabs/bin/bolt plan run ldap_server_setup::setup -t TARGETS
+/opt/puppetlabs/bin/bolt plan run ldap_server_setup::setup --verbose -targets TARGETS
 ```
 
 For example, using ``-t localhost`` will setup ldap up on the current host.  See Appendix for example output
   
-Steps:
+## Setup
 
-1. This does require bolt, so install it first.  I used a bolt.yaml file of:
+* This does require bolt, so install it first.  I used a bolt.yaml file of:
 
-```bash
-# cat ~/.puppetlabs/bolt/bolt.yaml
-ssh:
-  user: root
-  private-key: ~/.ssh/id_rsa-acceptance
-  host-key-check: false
-```
+    ```bash
+    # cat ~/.puppetlabs/bolt/bolt.yaml
+    ssh:
+      user: root
+      private-key: ~/.ssh/id_rsa-acceptance
+      host-key-check: false
+    ```
 
-Of course, this will differ based on setup.
+    Of course, this will differ based on setup.
 
-1. Switch into the ldap_server_setup directory
-1. Create a directory for forge modules:
+* Switch into the ldap_server_setup directory
+* Create a directory for forge modules, e.g., ``mkdir modules``
+* Install modules locally:
 
-```# mkdir modules```
+    ```bash
+    # /opt/puppetlabs/bin/bolt puppetfile install -m modules --puppetfile ./Puppetfile
+    ```
 
-1. Install modules locally:
+* Use the setup plan to install an LDAP server on a target node:
 
-```bash
-# /opt/puppetlabs/bin/bolt puppetfile install -m modules --puppetfile ./Puppetfile
-```
-
-5. Use the setup plan to install an LDAP server on a target node:
-
-```bash
-# /opt/puppetlabs/bin/bolt plan run ldap_server_setup::setup -m modules:.. -t <TARGET>
-```
+    ```bash
+    # /opt/puppetlabs/bin/bolt plan run ldap_server_setup::setup -m modules:.. -t <TARGET>
+    ```
 
 Once installed, either PE or CDPE can be set up to use it.  It defaults to a bind dn user of `cn=Service Bind User.dc=puppetdebug,dc=vlan` with a password of `password`.  There are two other users present initially:
 
@@ -105,7 +102,9 @@ Change the "hostname" to match the target where the bolt plan installed the ldap
 
 ## Appendix
 
-### Setup sample output
+### Sample output
+
+As well as running the command below, it may be useful to tail the docker logs, when it has been installed, to get insight into the progress of the ldap setup.  To see what's happening in the docker logs, open another terminal and run ``docker logs ldap -f``
 
 ```bash
 root@hapam-c38f73-0 ~/development/tools/puppet/@usage/modules/abottchen/ldap_server_setup (development)$ pbpr ldap_server_setup::setup -t localhost
